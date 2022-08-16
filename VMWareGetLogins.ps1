@@ -4,11 +4,7 @@ Import-Module SqlServer
 Get-Module -ListAvailable VMware* | Import-Module
 Import-Module C:\Scripts\SQL\SQL-Login.psm1
 Import-Module C:\Scripts\VMwareQuery\VMWareHorizon-Login.psm1
-#KACSQL1-Login
-#KACSQL1-LoginEncrypted
 KACSQL1-LoginWindows
-
-HWLVDI2-Login
 
 
 #*********************** SQL QUERY TO FIND USERS WHO HAVE LOGGED INTO THEIR VDI IN THE LAST 30 DAYS #***********************
@@ -114,7 +110,6 @@ Foreach ($user in $FinalList){
 
 $MailMessage = @{
 			To	    = "sbooth@hwlochner.com"
-            Cc		= "jlund@hwlochner.com"
 			From    = "VMWarePowerShell@hwlochner.com"
 			Subject = "VMWARE Users Who Have Not Logged On for 30 Days"
 			Body    = "$InactiveUserFormatList"
